@@ -65,6 +65,7 @@ def denoise(img_file, tsv_file, out_path, col_names=False, hp_filter=False, lp_f
 
     # select columns to use as nuisance regressors
     if col_names:
+        col_names = col_names[0].split(',')
         df = df[col_names]
         str_append = '  [SELECTED regressors in CSV]'
     else:
